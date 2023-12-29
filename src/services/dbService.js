@@ -1,5 +1,7 @@
-import { Room } from '../models/Room.js';
-import { Message } from '../models/Message.js';
+'use strict';
+
+const { Room } = require('../models/Room.js');
+const { Message } = require('../models/Message.js');
 
 async function getAllRooms() {
   const allRooms = await Room.findAll({
@@ -54,7 +56,7 @@ async function createMessage(author, text, date, roomId) {
   });
 }
 
-export const dbService = {
+const dbService = {
   getAllRooms,
   getOneRoom,
   createRoom,
@@ -63,4 +65,8 @@ export const dbService = {
   normalizeRoom,
   getMessages,
   createMessage,
+};
+
+module.exports = {
+  dbService,
 };

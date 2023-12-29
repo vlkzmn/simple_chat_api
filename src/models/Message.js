@@ -1,8 +1,10 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from '../gb.js';
-import { Room } from './Room.js';
+'use strict';
 
-export const Message = sequelize.define(
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../db/db.js');
+const { Room } = require('./Room.js');
+
+const Message = sequelize.define(
   'message',
   {
     author: {
@@ -28,3 +30,7 @@ export const Message = sequelize.define(
 
 Message.belongsTo(Room);
 Room.hasOne(Message);
+
+module.exports = {
+  Message,
+};

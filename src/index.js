@@ -1,13 +1,17 @@
-import { v4 as uuidV4 } from 'uuid';
-import { WebSocketServer } from 'ws';
-import { EventEmitter } from 'events';
+'use strict';
 
-import 'dotenv/config';
-import { dbService } from './services/dbService.js';
+/* eslint-disable no-console */
+const uuidV4 = require('uuid').v4;
+const { WebSocketServer } = require('ws');
+const { EventEmitter } = require('events');
+
+require('dotenv').config();
+
+const { dbService } = require('./services/dbService.js');
 
 const emitter = new EventEmitter();
 
-const wss = new WebSocketServer({ port: 5000 });
+const wss = new WebSocketServer({ port: process.env.PORT });
 
 wss.on('listening', () => console.log('server started'));
 

@@ -1,15 +1,18 @@
-# README
+# Simple Chat Api
+Server Api implements simple chat functionality.
 
-This is the [Express](https://expressjs.com) [Hello world](https://expressjs.com/en/starter/hello-world.html) example on [Render](https://render.com).
+# [LIVE CHAT DEMO](https://vlkzmn.github.io/simple_chat/)
+(the server is hosted on free hosting render.com, there may be delays in data loading)
 
-The app in this repo is deployed at [https://express.onrender.com](https://express.onrender.com).
+# Technologies used
+- Node
+- Sequelize
+- PostgreSQL
+- WebSocket
 
-## Deployment
-
-See https://render.com/docs/deploy-node-express-app or follow the steps below:
-
-Create a new web service with the following values:
-  * Build Command: `yarn`
-  * Start Command: `node app.js`
-
-That's it! Your web service will be live on your Render URL as soon as the build finishes.
+# Features & Functionality
+- User typing a username
+- Real-time messaging by WebSocket
+- All the messages have an author, time and text
+- Implemented an ability to create rooms (create / rename / delete)
+- New user see all prev messages in the room

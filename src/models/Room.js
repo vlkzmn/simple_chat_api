@@ -1,17 +1,20 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from '../gb.js';
+'use strict';
 
-export const Room = sequelize.define(
-  'room',
-  {
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../db/db.js');
 
-    author: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+const Room = sequelize.define('room', {
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
-);
+
+  author: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
+
+module.exports = {
+  Room,
+};
